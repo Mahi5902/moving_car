@@ -1,0 +1,110 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;   
+}
+body{
+    overflow:hidden;
+    animation:shakebody  linear 2s infinite;
+}
+.sky{
+    width:100%;
+    height:100vh;
+    background-image:url(background.jpg);
+    background-repeat:repeat-x;
+    position:absolute;
+    transition:ease;
+}
+.ground{
+    width:100%;
+    height:100vh;
+    background-image:url(trees.png);
+    position:absolute;
+    top:-20vh;
+     background-size:cover;
+    background-repeat:repeat-x;
+}
+.track{
+    width:1000vw;
+    height:40vh;
+    background-image:url(track.png);
+    background-repeat:repeat-x;
+    position:absolute;
+    top:70vh;
+    animation:carMove linear 10s infinite;
+}
+.car{
+    width:100%;
+     height:50vh; 
+    background-image:url(car_body.png);
+    position:absolute;
+    background-size:300px;
+    background-repeat:no-repeat;
+    bottom:-10vh;
+    left:40vh;
+    animation:shakeCar linear 1s infinite;
+}
+.wheel1 img{
+width:42px;
+/* width:3.5vw; */
+background-image:url(wheelimage.png);
+position:relative;
+animation:wheelRotation linear 0.5s infinite;
+top:66.9vh;
+left:72.4vh;
+
+}
+    .wheel2 img{
+        width:45.5px;
+        /* width:3.6vw; */
+        position:relative;
+        top:58.65vh;
+        left:46.9vh;
+        animation:wheelRotation linear .5s infinite;
+        }
+    @keyframes wheelRotation
+    {
+    100%{
+
+        transform:rotate(360deg);
+    }
+
+    }
+    @keyframes carMove{
+100%{
+    transform:translateX(-800vw);
+}
+    }
+    @keyframes shakeCar{
+        0%{
+            transform:translateY(-0.1vh);
+        }
+        50%{
+            transform:translateY(0.1vh);
+        }
+        100%{
+            transform:transformY(-0.1vh);
+        }
+    }
+    @keyframes shakeSky{
+        0%{
+            transform:translateX(-10px);
+        }
+        50%{
+            transform:translateX(10px);
+        }
+        100%{
+            transform:transformX(-10px);
+        }
+    }
+    @keyframes shakebody{
+        0%{
+            transform:translateY(-2vh);
+        }
+        50%{
+            transform:translateY(2vh);
+        }
+        100%{
+            transform:translateY(-2vh);
+        }
+    }
